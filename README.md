@@ -89,48 +89,6 @@ Built at **Reallytics.ai** as part of the voice AI platform, supporting sales te
 | **API** | FastAPI, Server-Sent Events |
 | **Monitoring** | Grafana, Prometheus |
 
-## Project Structure
-
-```
-real-time-audio-pipeline/
-??? ingestion/
-?   ??? audio_receiver.py
-?   ??? stream_manager.py
-?   ??? kafka_producer.py
-?   ??? audio_preprocessor.py
-??? transcription/
-?   ??? whisper_engine.py
-?   ??? aws_transcribe.py
-?   ??? vad.py
-?   ??? diarization.py
-??? nlp/
-?   ??? sentiment_analyzer.py
-?   ??? entity_extractor.py
-?   ??? intent_classifier.py
-?   ??? topic_modeler.py
-??? insights/
-?   ??? sales_signal_detector.py
-?   ??? conversation_metrics.py
-?   ??? action_item_extractor.py
-?   ??? aggregator.py
-??? api/
-?   ??? main.py
-?   ??? routes/
-?   ??? websocket_stream.py
-?   ??? sse_handler.py
-??? alerting/
-?   ??? alert_engine.py
-?   ??? slack_notifier.py
-?   ??? email_notifier.py
-??? infrastructure/
-?   ??? Dockerfile
-?   ??? docker-compose.yml
-?   ??? aws_deploy.py
-??? tests/
-??? requirements.txt
-??? README.md
-```
-
 ## Performance
 
 | Metric | Value |
@@ -142,34 +100,10 @@ real-time-audio-pipeline/
 | Transcription accuracy (WER) | < 8% |
 | Sentiment accuracy | 89% |
 
-## Quick Start
+---
 
-```bash
-git clone https://github.com/rehan243/Real-Time-Audio-Pipeline.git
-cd Real-Time-Audio-Pipeline
+> **Source Code**: The production source code for this project is maintained in a private repository due to proprietary and client confidentiality requirements. This repository documents the architecture, design decisions, and technical approach. For code-level discussions or collaboration inquiries, feel free to reach out.
 
-pip install -r requirements.txt
-
-# Start infrastructure
-docker-compose up -d
-
-# Run the pipeline
-python ingestion/stream_manager.py --source mic
-
-# Start API server
-uvicorn api.main:app --host 0.0.0.0 --port 8000
-```
-
-## Environment Variables
-
-```bash
-AWS_REGION=us-east-1
-KAFKA_BOOTSTRAP_SERVERS=localhost:9092
-WHISPER_MODEL=large-v3
-DATABASE_URL=postgresql://user:pass@localhost:5432/audio
-REDIS_URL=redis://localhost:6379
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/...
-```
 
 ## Author
 
@@ -180,4 +114,3 @@ SLACK_WEBHOOK_URL=https://hooks.slack.com/services/...
 - [Email](mailto:rehanmalil99@gmail.com)
 
 ---
-
